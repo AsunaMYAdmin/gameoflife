@@ -8,12 +8,15 @@ class Cell {
     private int corY;
 
     // Если живая - то чёрная, если мёртвая - то белая
-    String getLifeCycle(@NotNull Boolean whatIsLive) {
+    void setLifeCycle(@NotNull Boolean whatIsLive) {
         if (whatIsLive) {
-            return "live";
+            lifeCycle = "live";
         } else {
-            return "dead";
+            lifeCycle = "dead";
         }
+    }
+    String getLifeCycle() {
+        return lifeCycle;
     }
     // Размеры одной клетки
     int getCellWeight() {
@@ -39,8 +42,9 @@ class Cell {
         this.corY = corY;
     }
 
-    Cell(int x, int y) {
+    Cell(int x, int y, Boolean isLive) {
         this.setCorX(x);
         this.setCorY(y);
+        this.setLifeCycle(isLive);
     }
 }

@@ -9,13 +9,17 @@ class WindowManagement {
     //Создаётся новое поле (экран)
     private final static JFrame window = new JFrame("Game Of Life");
     static void startGameField(int w, int h) {
-        window.setSize(w, h);
-        window.setVisible(true);
+        getWindow().setSize(w, h);
+        getWindow().setVisible(true);
         //Анонимный класс абстрактного WindowAdpater'а, который завершает программу в консоли, при изменении (закрытии) окна
-        window.addWindowListener(new WindowAdapter() {
+        getWindow().addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });
+    }
+
+    public static JFrame getWindow() {
+        return window;
     }
 }
