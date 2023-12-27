@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 class Paint extends JPanel {
+
     @Override
     protected void paintComponent(Graphics g) {
         for (int i = 0; i < CellManagement.getCellList().size(); i++) {
