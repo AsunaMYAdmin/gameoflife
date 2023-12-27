@@ -23,8 +23,9 @@ class Game {
         }
 
         game.close();
-        GameField.paintField(x, y);
 
-        
+        GameField.paintField(x, y);
+        Begin.start();
+        GameField.paintField(x, y);
     }
 }

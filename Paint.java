@@ -11,7 +11,11 @@ class Paint extends JPanel {
                 int superX = CellManagement.getCellList().get(i).get(k).getCorX();
                 int superY = CellManagement.getCellList().get(i).get(k).getCorY();
                 int size = CellManagement.getCellList().get(i).get(k).getCellHeight();
-                g.drawRect(superX, superY, size, size);
+                if (CellManagement.getCellList().get(i).get(k).getLifeCycle().equals("live")) {
+                    g.fillRect(superX, superY, size, size);
+                } else {
+                    g.drawRect(superX, superY, size, size);
+                }
             }
         }
     }
