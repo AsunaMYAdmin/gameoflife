@@ -4,10 +4,11 @@ import org.jetbrains.annotations.NotNull;
 
 class Cell {
     private String lifeCycle;
-    //Тут должна быть переменная для обозначения положения на клеточном поле
+    private int corX;
+    private int corY;
 
     // Если живая - то чёрная, если мёртвая - то белая
-    public String getLifeCycle(@NotNull Boolean whatIsLive) {
+    String getLifeCycle(@NotNull Boolean whatIsLive) {
         if (whatIsLive) {
             return "live";
         } else {
@@ -20,5 +21,26 @@ class Cell {
     }
     int getCellHeight() {
         return 10;
+    }
+
+    int getCorX() {
+        return corX;
+    }
+
+    private void setCorX(int corX) {
+        this.corX = corX;
+    }
+
+    int getCorY() {
+        return corY;
+    }
+
+    private void setCorY(int corY) {
+        this.corY = corY;
+    }
+
+    Cell(int x, int y) {
+        this.setCorX(x);
+        this.setCorY(y);
     }
 }
