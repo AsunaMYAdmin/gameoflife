@@ -21,6 +21,15 @@ class CellManagement {
             absoluteY = absoluteY + cellX.get(i).getCellHeight();
         }
     }
+    static void cellsSetNumber() {
+        int number = 0;
+        for (int i = 0; i < getCellList().size(); i++) {
+            for (Cell cell : getCellList().get(i)) {
+                cell.setSelfNumber(number);
+                number++;
+            }
+        }
+    }
     static List<List<Cell>> getCellList() {
         return cellList;
     }

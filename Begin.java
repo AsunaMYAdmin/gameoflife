@@ -1,20 +1,25 @@
 package gameoflife;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 class Begin {
-    static void start() {
-       for(int i = 0; i < CellManagement.getCellList().size(); i++) {
-           for (int k = 0; k < CellManagement.getCellList().get(i).size(); k++) {
-               Set<Integer> random = new LinkedHashSet<>();
-               for (int j = 0; j < CellManagement.getCellList().get(i).size(); j++) {
-                   random.add((int)(Math.random() * CellManagement.getCellList().get(i).size()));
-               }
-               for (int num : random) {
-                   CellManagement.getCellList().get(i).get(k).setLifeCycle(num == k);
+    static void start(int beginX, int beginY) {
+       CellManagement.cellsSetNumber();
+       List<Integer> randomNumbersList = new ArrayList<>();
+       for (int k = 0; k < beginX * beginY / 5; k++) {
+           int randomNumber = (int)(Math.random() * (beginX * beginY));
+           randomNumbersList.add(randomNumber);
+       }
+       for (int i = 0; i < CellManagement.getCellList().size(); i++) {
+           for (Cell cell : CellManagement.getCellList().get(i)) {
+               for (int number : randomNumbersList) {
+                   if (cell.getSelfNumber() == number) {
+                       cell.setLifeCycle(true);
+                   }
                }
            }
        }
+
     }
 }

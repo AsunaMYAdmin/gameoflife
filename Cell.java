@@ -6,6 +6,7 @@ class Cell {
     private String lifeCycle;
     private int corX;
     private int corY;
+    private int selfNumber;
 
     // Если живая - то чёрная, если мёртвая - то белая
     void setLifeCycle(@NotNull Boolean whatIsLive) {
@@ -46,5 +47,13 @@ class Cell {
         this.setCorX(x);
         this.setCorY(y);
         this.setLifeCycle(isLive);
+    }
+
+    int getSelfNumber() {
+        return selfNumber;
+    }
+
+    void setSelfNumber(int selfNumber) {
+        this.selfNumber = selfNumber;
     }
 }
