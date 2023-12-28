@@ -1,6 +1,7 @@
 package gameoflife;
 
 public class Iterator {
+    // Проверяет все ли живы?
     private static Boolean allDead() {
         int count = 0;
         for (int i = 0; i < CellManagement.getCellList().size(); i++) {
@@ -11,6 +12,7 @@ public class Iterator {
         return (count > 0);
     }
 
+    // Повторяет и проверяет
     static void generation(int x, int y) {
         while (allDead()) {
             Life.start();

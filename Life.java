@@ -70,10 +70,12 @@ public class Life {
        return result;
     }
     static void start() {
+         // Коллекция, которая содержит ключи и индексы живых по результатам проверки
         Map<Integer, Integer> result = checkLives();
         List<List<Cell>> all = CellManagement.getCellList();
         for (List<Cell> cells : all) {
             for (Cell cell : cells) {
+                // Изменяет состояние, по условию
                 if (cell.getLifeCycle().equals("live")) {
                     if (result.get(cell.getSelfNumber()) > 3 || result.get(cell.getSelfNumber()) < 2) {
                         cell.setLifeCycle(false);

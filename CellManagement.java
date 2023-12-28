@@ -21,6 +21,7 @@ class CellManagement {
             absoluteY = absoluteY + cellX.get(i).getCellHeight();
         }
     }
+    // Присваивается уникальное значение каждой клетке
     static void cellsSetNumber() {
         int number = 0;
         for (int i = 0; i < getCellList().size(); i++) {
