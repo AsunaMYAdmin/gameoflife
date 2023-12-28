@@ -1,7 +1,5 @@
 package gameoflife;
 
-import org.jetbrains.annotations.NotNull;
-
 class Cell {
     private String lifeCycle;
     private int corX;
@@ -9,7 +7,7 @@ class Cell {
     private int selfNumber;
 
     // Если живая - то чёрная, если мёртвая - то белая
-    void setLifeCycle(@NotNull Boolean whatIsLive) {
+    void setLifeCycle(Boolean whatIsLive) {
         if (whatIsLive) {
             lifeCycle = "live";
         } else {

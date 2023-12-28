@@ -1,14 +1,12 @@
 package gameoflife;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Life {
 
-     private static @NotNull Map<Integer, Integer> checkLives() {
+     private static Map<Integer, Integer> checkLives() {
          Map<Integer, Integer> result = new HashMap<>();
          List<List<Cell>> all = CellManagement.getCellList();
          for (int i = 0; i < all.size(); i++) {

@@ -1,0 +1,2 @@
+main-class: gameoflife.Main
+class-path: bin/public/
